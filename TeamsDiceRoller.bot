@@ -1,0 +1,41 @@
+{
+  "name": "TeamsDiceRoller",
+  "padlock": "O8r98aM5A7/kEYLewEF9MA==!lm/U+oz1eE9NFlYAEblWGKALh0oj5XYbDyOf5tdxjp22Y+oXiP+NPJXx5rqozblu",
+  "version": "2.0",
+  "services": [
+    {
+      "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+      "subscriptionId": "859c6052-0b11-4a7f-8175-cba5eb588227",
+      "resourceGroup": "teamsdiceroller",
+      "serviceName": "TeamsDiceRoller",
+      "type": "abs",
+      "name": "TeamsDiceRoller",
+      "id": "1"
+    },
+    {
+      "connectionString": "HBvyPAPzoNFmOlF6fHHJMg==!cR7oGOn+ujHFdSVqDvRGQcrSJ3TY1ZnFLAnZSp7Wc1hB5F/oTRfC9FWm+2mnkJ4Nyqpw/UxZvGhcU8qweaRhC5YQMlamZ0oyJh47s1O+FuP/nJmtlEl2Gxox8CPX2Ocq6WOp2BjIsgz9EpW1fa33+DwXXQ8UW6JVpHpfcHUq+ik7TeA4pv0XHOjnSCQ05XxjtUhhrdtX183P9yxtaA58VVSqiHZNg1EYogn3c7NX2VI=",
+      "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+      "subscriptionId": "859c6052-0b11-4a7f-8175-cba5eb588227",
+      "resourceGroup": "teamsdiceroller",
+      "serviceName": "teamsdiceroller8dc5",
+      "type": "blob",
+      "id": "2"
+    },
+    {
+      "appId": "",
+      "appPassword": "",
+      "endpoint": "http://localhost:3978/api/messages",
+      "type": "endpoint",
+      "name": "development",
+      "id": "3"
+    },
+    {
+      "appId": "fd510416-1bf8-480d-8597-362ad8e2a940",
+      "appPassword": "9xPuuPlAUuoittJJam+ieg==!gTunfqQhStBY2QFIkk5gP6RSUebzQO9v91jEjS1KCo0=",
+      "endpoint": "https://teamsdiceroller-8dc5.azurewebsites.net/api/messages",
+      "type": "endpoint",
+      "name": "production",
+      "id": "4"
+    }
+  ]
+}
