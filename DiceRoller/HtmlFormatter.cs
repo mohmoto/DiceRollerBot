@@ -6,12 +6,12 @@ namespace DiceRoller
 {
     public class HtmlFormatter
     {
-        private static readonly string RootElementStyle = "vertical-align: middle; font-size: 20px;";
-        private static readonly string HtmlImgElement = "<img width=100  height=100 src='{0}' alt='{1}' />";
-        private static readonly string HtmlDiceSeperator = ""; //"<span> + </span>";
-        private static readonly string HtmlDicePrefix = ""; //"<span>( </span>";
-        private static readonly string HtmlDicePostfix = ""; //"<span> ) </span>";
         private static readonly string HtmlRootElement = "<div style='{0}'>{1}</div>";
+        private static readonly string RootElementStyle = "text-align: center; line-height:50px font-size: 20px;";
+        private static readonly string HtmlImgElement = "<img width=50  height=50 src='{0}' alt='{1}' />";
+        private static readonly string HtmlDiceSeperator = " + ";
+        private static readonly string HtmlDicePrefix = "( ";
+        private static readonly string HtmlDicePostfix = " ) ";
         private static readonly Uri WwwBaseUri = new Uri("https://teamsdiceroller-8dc5.azurewebsites.net");
 
         /// <summary>
