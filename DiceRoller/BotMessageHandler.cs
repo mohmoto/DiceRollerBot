@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 
 namespace DiceRoller
 {
     public class BotMessageHandler
     {
         private static readonly string HelpString =
-            "You can type simply 'd20' to roll a 20 sided die.\n " +
-            "You can also tell me how many dice you want to roll like: '3d6'\n" +
-            "That tells me to roll 3 individual 6 sided die and I will tell you the total.\n" +
-            "Additionally, you can type any modifiers at the end such as '3d6+5\n" +
-            "This tells me to add 5 to the total dice roll.\n" +
+            "You can type simply 'd20' to roll a 20 sided die.<br>" +
+            "You can also tell me how many dice you want to roll like: '3d6'<br>" +
+            "That tells me to roll 3 individual 6 sided die and I will tell you the total.<br>" +
+            "Additionally, you can type any modifiers at the end such as '3d6+5<br>" +
+            "This tells me to add 5 to the total dice roll.<br>" +
             "DM says you're gonna die, now roll a d6!";
 
         public static string HandleMessage(string message)
