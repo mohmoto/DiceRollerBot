@@ -19,7 +19,7 @@ namespace DiceRoller
 
         public int Modifier { get; internal set; }
 
-        private Regex re = new Regex(@"(?<quant>\d*)? *(d(?<die>\d+)){1} *((?<operand>[\+-]) *(?<mod>\d+))?");
+        private Regex re = new Regex(@"(?<quant>\d*)? *(d(?<die>\d+)){1} *((?<operand>[\+-]) *(?<mod>\d+))?", RegexOptions.IgnoreCase);
 
         public bool Parse(string value)
         {
