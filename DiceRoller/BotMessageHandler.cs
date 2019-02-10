@@ -38,7 +38,7 @@ namespace DiceRoller
         {
             string responseMessage = message.Remove(
                     0,
-                    message.IndexOf("echo", StringComparison.OrdinalIgnoreCase));
+                    message.IndexOf("echo", StringComparison.OrdinalIgnoreCase) + 4).TrimStart();
             return responseMessage;
         }
 
