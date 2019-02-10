@@ -5,7 +5,6 @@ using DiceRoller;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Schema;
 using Microsoft.Extensions.Logging;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -77,28 +76,9 @@ namespace Microsoft.BotBuilderSamples
                 // Save the new turn count into the conversation state.
                 await _accessors.ConversationState.SaveChangesAsync(turnContext);
 
-                // Echo back to the user whatever they typed.
-                var rr = new RollRequest();
-                var responseMessage = string.Empty;
-                if (!rr.Parse(turnContext.Activity.Text))
-                {
-                    responseMessage = ErrorMessages.GetErrorMessage(turnContext.Activity.Text);
-                }
-                else
-                {
-                    List<int> rolls = Roller.Roll(rr.Quantum, rr.Dimensions);
-                    responseMessage = HtmlFormatter.Format(rr, rolls);
-                    if (responseMessage == null)
-                    {
-                        responseMessage = TextFormatter.Format(rr, rolls);
-                    }
-                }
+                string responseMessage = BotMessageHandler.HandleMessage(turnContext.Activity.Text);
 
                 await turnContext.SendActivityAsync(responseMessage);
-            }
-            else
-            {
-                // await turnContext.SendActivityAsync($"{turnContext.Activity.Type} event detected");
             }
         }
     }

@@ -7,7 +7,7 @@ namespace DiceRoller
 {
     public class ErrorMessages
     {
-        private static readonly string EchoInput = "I don't know how to [{0}].";
+        private static readonly string HelpText = "Type 'help' for help.";
         private static string[] errorMessages =
         {
             "You rolled a critical 1! Or maybe I did... Nope it was you.",
@@ -34,7 +34,7 @@ namespace DiceRoller
             int i = rand.Next(0, errorMessages.Length);
             if (input != null)
             {
-                return string.Concat(errorMessages[i], " ", string.Format(EchoInput, input));
+                return string.Concat(errorMessages[i], " ", HelpText);
             }
             else
             {
