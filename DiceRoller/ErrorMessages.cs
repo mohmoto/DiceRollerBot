@@ -7,7 +7,7 @@ namespace DiceRoller
 {
     public class ErrorMessages
     {
-        private static readonly string HelpText = "<br>Sorry I don't know what you mean. Type 'help' for help.";
+        private static readonly string HelpText = "<br>I didn't catch that. Type 'help' for help.";
         private static string[] errorMessages =
         {
             "You rolled a critical 1! Or maybe I did... Nope it was you.",
@@ -21,6 +21,7 @@ namespace DiceRoller
             "Oh no! You split the party!",
             "Never cross the streams! It would be bad.",
             "Do you kiss your mother with that mouth?",
+            "MY SERVER IS ON FIRE!!! Seriously, someone should email the fire department.",
         };
 
         /// <summary>
