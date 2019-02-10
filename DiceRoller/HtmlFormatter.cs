@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
-using System;
-using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
 
 namespace DiceRoller
 {
@@ -21,11 +20,11 @@ namespace DiceRoller
         /// <param name="rr">The RollRequest to generate from.</param>
         /// <param name="values">The list of values which represent dice rolls.</param>
         /// <returns>An HTML string or null if the assets were not found.</returns>
-        public static string Format(RollRequest rr, List<int> values)
+        public static string Format(RollRequest rr, int[] values)
         {
             List<string> assetImgElements = new List<string>();
             int total = 0;
-            for (int i = 0; i < values.Count; i++)
+            for (int i = 0; i < values.Length; i++)
             {
                 string assetUri = DiceAssets.GetUriForRoll(rr.Dimensions, values[i]);
                 if (assetUri != null)
@@ -68,7 +67,7 @@ namespace DiceRoller
             // Rolling a single D20
             // TODO: It would be fun to randomize these.
             string flavorText = string.Empty;
-            if (values.Count == 1 && rr.Dimensions == 20)
+            if (values.Length == 1 && rr.Dimensions == 20)
             {
                 if (values[0] == 1)
                 {

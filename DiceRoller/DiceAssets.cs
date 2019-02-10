@@ -2,10 +2,19 @@
 
 namespace DiceRoller
 {
+    /// <summary>
+    /// Lookup table for dice PNGs and retrieval method.
+    /// </summary>
     public class DiceAssets
     {
-        private static readonly string BaseUri = "Assets/Dice";
+        /// <summary>
+        /// The relative path under wwwroot where the PNGs live.
+        /// </summary>
+        private static readonly string RelativePath = "Assets/Dice";
 
+        /// <summary>
+        /// The lookup table for each die dimension and die roll respectively.
+        /// </summary>
         private static Dictionary<int, Dictionary<int, string>> assetLookup = new Dictionary<int, Dictionary<int, string>>()
         {
             {
@@ -115,7 +124,12 @@ namespace DiceRoller
             },
         };
 
-
+        /// <summary>
+        /// Returns a relative path to a die asset for a given roll.
+        /// </summary>
+        /// <param name="dimensions">The die dimension.</param>
+        /// <param name="value">The value of the die roll.</param>
+        /// <returns>A relative path to a PNG which represents the given rool. Returns null if one was not found.</returns>
         public static string GetUriForRoll(int dimensions, int value)
         {
             string path = null;
@@ -124,7 +138,7 @@ namespace DiceRoller
                 if (assetLookup[dimensions].ContainsKey(value))
                 {
                     string fileName = assetLookup[dimensions][value];
-                    path = string.Concat(BaseUri, "/", fileName);
+                    path = string.Concat(RelativePath, "/", fileName);
                 }
             }
 

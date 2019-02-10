@@ -4,9 +4,19 @@ using System.Diagnostics;
 
 namespace DiceRoller
 {
+    /// <summary>
+    /// Rolls the dice.
+    /// </summary>
     public class Roller
     {
-        public static List<int> Roll(int quantum,  int dimensions, bool sort = false)
+        /// <summary>
+        /// Rolls the dice given using a random number generator.
+        /// </summary>
+        /// <param name="quantum">The number of dice to roll.</param>
+        /// <param name="dimensions">The dimensions of the dice to roll.</param>
+        /// <param name="sort">Whether the result should be sorted from greatest to least.</param>
+        /// <returns>An array of die rolls produced by the RNG.</returns>
+        public static int[] Roll(int quantum,  int dimensions, bool sort = false)
         {
             Debug.Assert(quantum > 0, "quantum must be greater than 0");
             Debug.Assert(dimensions > 0, "dimension must be greater than 0");
@@ -31,7 +41,7 @@ namespace DiceRoller
                 result.Sort();
             }
 
-            return result;
+            return result.ToArray();
         }
     }
 }

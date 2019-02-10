@@ -2,13 +2,23 @@
 
 namespace DiceRoller
 {
+    /// <summary>
+    /// Handles plain text formatting of RollRequests.
+    /// </summary>
     public class TextFormatter
     {
         // TODO: Make a base class to inherit from.
-        public static string Format(RollRequest rr, List<int> values)
+
+        /// <summary>
+        /// Formats a RollRequest and the resulting rolls into a human readable string.
+        /// </summary>
+        /// <param name="rr">The RollRequest object to format.</param>
+        /// <param name="values">The result of the dice rolls.</param>
+        /// <returns>The formatted string.</returns>
+        public static string Format(RollRequest rr, int[] values)
         {
             int total = 0;
-            for (int i = 0; i < values.Count; i++)
+            for (int i = 0; i < values.Length; i++)
             {
                 total += values[i];
             }
@@ -32,7 +42,7 @@ namespace DiceRoller
 
             // Rolling a single D20
             string flavorText = string.Empty;
-            if (values.Count == 1 && rr.Dimensions == 20)
+            if (values.Length == 1 && rr.Dimensions == 20)
             {
                 if (values[0] == 1)
                 {
